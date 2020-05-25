@@ -1,5 +1,4 @@
 #include "random_point_generator.h"
-#include<iostream>
 
 RandomPointGenerator::RandomPointGenerator(const double *init_array, int size_x, int size_y)
 {
@@ -47,7 +46,7 @@ std::pair<int, int> RandomPointGenerator::GetRandomPoint()
 	while (random_x > points_x_probability_[i])
 	{
 		random_x -= points_x_probability_[i];
-		i++;
+		++i;
 	}	
 	point.first = i;
 
@@ -57,7 +56,7 @@ std::pair<int, int> RandomPointGenerator::GetRandomPoint()
 	while (random_y > points_y_probability_[i][j])
 	{
 		random_y -= points_y_probability_[i][j];
-		j++;
+		++j;
 	}
 	point.second = j;
 
