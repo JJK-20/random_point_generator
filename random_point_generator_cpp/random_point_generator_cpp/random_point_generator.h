@@ -13,5 +13,5 @@ private:
 	std::uniform_real_distribution<double> generator_;
 	double *points_x_probability_;
 	double **points_y_probability_;
-	int array_x_size, array_y_size;
+	int array_x_size_, array_y_size_;
 };

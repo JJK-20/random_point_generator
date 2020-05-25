@@ -2,8 +2,8 @@
 
 RandomPointGenerator::RandomPointGenerator(const double *init_array, int size_x, int size_y)
 {
-	this->array_x_size = size_x;
-	this->array_y_size = size_y;
+	this->array_x_size_ = size_x;
+	this->array_y_size_ = size_y;
 	this->points_y_probability_ = new double*[size_y];
 	for (int i = 0; i < size_x; ++i)
 		this->points_y_probability_[i] = new double[size_x];
@@ -32,7 +32,7 @@ RandomPointGenerator::RandomPointGenerator(const double *init_array, int size_x,
 RandomPointGenerator::~RandomPointGenerator()
 {
 	delete[] this->points_x_probability_;
-	for (int i = 0; i < this->array_x_size; ++i)
+	for (int i = 0; i < this->array_x_size_; ++i)
 		delete[] this->points_y_probability_[i];
 	delete[] this->points_y_probability_;
 }
